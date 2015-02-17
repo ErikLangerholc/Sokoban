@@ -161,9 +161,7 @@ def Run():
         settingsfile.close()
     except:
         print("Error reading settings file")
-        DisplayInfo = g.display.Info()
-        WindowX = DisplayInfo.current_w
-        WindowY = DisplayInfo.current_h
+        WindowX, WindowY  = 1200, 800
 
     Wallimg = g.image.load("wall.png")
     Boximg = g.image.load("box.png")
@@ -194,30 +192,30 @@ def Run():
                     g.quit()
                     sys.exit()
             elif e.type == KEYDOWN:
-                if e.key in (K_w, K_UP) and Y > 0:
+                if e.key == K_UP and Y > 0:
                     upkeytimer = time.clock()
                     move(level, "up")
                     movecount += 1
-                elif e.key in (K_s, K_DOWN) and Y < levy - 1:
+                elif e.key == K_DOWN and Y < levy - 1:
                     downkeytimer = time.clock()
                     move(level, "down")
                     movecount += 1
-                elif e.key in (K_a, K_LEFT) and X > 0:
+                elif e.key == K_LEFT and X > 0:
                     leftkeytimer = time.clock()
                     move(level, "left")
                     movecount += 1
-                elif e.key in (K_d, K_RIGHT) and X < levx - 1:
+                elif e.key ==K_RIGHT and X < levx - 1:
                     rightkeytimer = time.clock()
                     move(level, "right")
                     movecount += 1
             elif e.type == KEYUP:
-                if e.key in (K_w, K_UP):
+                if e.key == K_UP:
                     upkeytimer = 0
-                elif e.key in (K_s, K_DOWN):
+                elif e.key == K_DOWN:
                     downkeytimer = 0
-                elif e.key in (K_a, K_LEFT):
+                elif e.key == K_LEFT:
                     leftkeytimer = 0
-                elif e.key in (K_s, K_RIGHT):
+                elif e.key == K_RIGHT:
                     rightkeytimer = 0
         t = time.clock()
         skip = (skip + 1) % 3

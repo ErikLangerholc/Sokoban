@@ -20,7 +20,7 @@ def start():
         settingsfile.close()
     except:
         print("Error reading settings file. Defaulting to level 1")
-    w.quit()
+    w.destroy()
     game.Run()
 
 
