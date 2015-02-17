@@ -1,0 +1,4 @@
+#		type 'full' for fullscreen
+Resolution 1200 800
+StartingLevel 6
+Backgrounds 13
