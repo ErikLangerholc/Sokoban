@@ -57,5 +57,3 @@ input.grid(column=1, row=1)
 input.focus()
 
 w.mainloop()
-
-__author__ = "Erik Langerholc"
